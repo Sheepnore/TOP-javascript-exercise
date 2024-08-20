@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const palindromes = function(string){
+    const arr = string.split('')
+    let cleanArray = arr.filter((char) => (char >= 'a' && char<= 'z') || (char >= 'A' && char <='Z'));
+
+    const cleanString = cleanArray.join('');
+    const reversed = cleanArray.reverse();
+
+    const cleanReversedString = reversed.join('');
+    if (cleanString === cleanReversedString){
+      return true
+    }
+    else{
+      return false
+    }
+
+  };
+
+console.log(palindromes('racecar'));
+  </script>
+</body>
+</html>
