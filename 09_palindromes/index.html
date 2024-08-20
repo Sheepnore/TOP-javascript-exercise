@@ -7,24 +7,29 @@
 </head>
 <body>
   <script>
-  const palindromes = function(string){
-    const arr = string.split('')
-    let cleanArray = arr.filter((char) => (char >= 'a' && char<= 'z') || (char >= 'A' && char <='Z'));
+ const palindromes = function(string){
+  const arr = string.split('');
 
-    const cleanString = cleanArray.join('');
-    const reversed = cleanArray.reverse();
+  let cleanArray = arr.filter( char => { 
+    return (char >= '0' && char <= '9') || (char >= 'a' && char<= 'z') || (char >= 'A' && char <='Z')});
 
-    const cleanReversedString = reversed.join('');
-    if (cleanString === cleanReversedString){
-      return true
-    }
-    else{
-      return false
-    }
+  const cleanString = cleanArray.join('').toLowerCase();
+  const reversed = [...cleanArray].reverse();
 
-  };
+  const cleanReversedString = reversed.join('').toLowerCase();
 
-console.log(palindromes('racecar'));
+  console.log(cleanString,cleanReversedString);
+  if (cleanString === cleanReversedString){
+    return true
+  }
+  else{
+    return false
+  }
+
+};
+
+palindromes('A car, a man, a maraca.')
+console.log(' ' >= 1);
   </script>
 </body>
 </html>
