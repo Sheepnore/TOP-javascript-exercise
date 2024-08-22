@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 1942,
+        yearOfDeath: 1970,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]
+  
+const findTheOldest = function(arrObj) {
+  const modified = arrObj.map( obj => {
+    obj.years = obj.yearOfDeath - obj.yearOfBirth;
+    return obj
+  })
+
+  let oldest = 0;
+  modified.forEach(obj => {
+    if (obj.years > oldest){
+      oldest = obj.years;
+    }
+  })
+
+  let returnResult;
+  modified.forEach( obj => {
+    if (obj.years === oldest){
+      returnResult = obj
+    }
+
+  })
+  return returnResult;
+};
+
+findTheOldest(people)
+
+</script>
+</body>
+</html>
